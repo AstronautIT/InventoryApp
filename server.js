@@ -49,7 +49,7 @@ app.post('/api/products', (req, res) => {
       VALUES (?, ?, ?, ?, ?, ?)
     `);
     
-    const result = insert.run(name, description || '', quantity, price, category || 'General', sku);
+    const result = insert.run(name, description || '', quantity, price, category || 'Other', sku);
     
     const product = db.prepare('SELECT * FROM products WHERE id = ?').get(result.lastInsertRowid);
     res.status(201).json(product);

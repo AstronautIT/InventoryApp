@@ -248,7 +248,7 @@ function handleSearch(e) {
 
     const filtered = products.filter(product => 
         product.name.toLowerCase().includes(searchTerm) ||
-        product.description.toLowerCase().includes(searchTerm) ||
+        (product.description && product.description.toLowerCase().includes(searchTerm)) ||
         product.sku.toLowerCase().includes(searchTerm) ||
         product.category.toLowerCase().includes(searchTerm)
     );
