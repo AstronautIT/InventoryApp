@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Inventory Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍺 Beer Inventory Management</h1>
+            <p class="subtitle">Manage your craft beer store inventory</p>
+        </header>
+
+        <div class="actions">
+            <button id="addProductBtn" class="btn btn-primary">+ Add New Beer</button>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search beers..." />
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="totalProducts">0</h3>
+                <p>Total Beers</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalValue">$0</h3>
+                <p>Total Value</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="lowStock">0</h3>
+                <p>Low Stock Items</p>
+            </div>
+        </div>
+
+        <div id="productList" class="product-grid"></div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Beer</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Beer Name *</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productSKU">SKU *</label>
+                    <input type="text" id="productSKU" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description (ABV, Flavor Profile)</label>
+                    <textarea id="productDescription" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice">Price ($) *</label>
+                        <input type="number" id="productPrice" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productQuantity">Quantity (Cases) *</label>
+                        <input type="number" id="productQuantity" min="0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Beer Type</label>
+                    <select id="productCategory">
+                        <option value="Lager">Lager</option>
+                        <option value="Ale">Ale</option>
+                        <option value="IPA">IPA</option>
+                        <option value="Stout">Stout</option>
+                        <option value="Porter">Porter</option>
+                        <option value="Wheat Beer">Wheat Beer</option>
+                        <option value="Sour">Sour</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Beer</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "inventory-app",
+  "version": "1.0.0",
+  "description": "A modern web app to manage craft beer store inventory",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["inventory", "beer", "craft beer", "management"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "better-sqlite3": "^9.2.2"
+  }
+}
